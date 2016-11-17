@@ -166,13 +166,13 @@ class ZeptoApi extends ZeptoApiHelper implements ZeptoApiInterface
 
 		$res = $this->execute();
 
-		if ($res->result[0]->status != false) {
+		if ($res->result->status != false) {
 			
 			return $res;
 		}
 		else{
 
-			$this->apiErrMsg = $res->result[0]->message;
+			$this->apiErrMsg = $res->result->message;
 
 			return false;
 		}
