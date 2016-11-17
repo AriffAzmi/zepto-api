@@ -8,6 +8,9 @@
             "email": "ariff.azmi16@gmail.com"
         }
     ],
+    "require": {
+        "ariffazmi/zepto-api": "dev-master"
+    },
     "autoload": {
         "psr-0": {
             "ZeptoApi": "src/"
