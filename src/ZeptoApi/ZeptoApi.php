@@ -335,7 +335,25 @@ class ZeptoApi extends ZeptoApiHelper implements ZeptoApiInterface
 		$this->url = 'https://zeptoapi.com/api/rest/booking/new';
 		$this->type = 'create_booking';
 		$this->postData = [
-			'jobid' => $jobid
+			'sender_fullname' => $sender_fullname,
+			'sender_email' => $sender_email,
+			'sender_phone' => $sender_phone,
+			'recipient_fullname' => $recipient_fullname,
+			'recipient_email' => $recipient_email,
+			'recipient_phone' => $recipient_phone,
+			'pickup_address' => $pickup_address,
+			'delivery_address' => $delivery_address,
+			'pickup_latlng' => $pickup_latlng,
+			'delivery_latlng' => $delivery_latlng,
+			'distance_km' => $distance_km,
+			'price_myr' => $price_myr,
+			'trip_type' => $trip_type,
+			'instruction_notes' => $instruction_notes,
+			'datetime_pickup' => $datetime_pickup,
+			'unit_no_pickup' => $unit_no_pickup,
+			'unit_no_delivery' => $unit_no_delivery,
+			'vehicle' => $vehicle,
+			'country' => $country
 		];
 
 		$res = $this->execute();
