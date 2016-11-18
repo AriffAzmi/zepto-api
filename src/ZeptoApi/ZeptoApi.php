@@ -54,11 +54,6 @@ class ZeptoApi extends ZeptoApiHelper implements ZeptoApiInterface
      * @var Token
      */
     protected $token;
-
-    /**
-     * @var Mode The application environment either to be test in sandbox mode or live app
-     */
-    protected $mode;
 	
 	/**
 	 * @var set the url request
@@ -102,16 +97,6 @@ class ZeptoApi extends ZeptoApiHelper implements ZeptoApiInterface
 		else{
 
 			$this->token = $config['token'];
-		}
-
-		if (is_null($config['mode']) && !isset($config['mode'])) {
-			
-			$this->exception("Required mode key not supplied in config");
-			$this->apiErrMsg = "Required mode key not supplied in config";
-		}
-		else{
-
-			$this->mode = $config['mode'];
 		}
 
 	}
