@@ -121,11 +121,6 @@ class ZeptoApiHelper
 	 */
     protected $apiErrMsg;
 
-    /**
-	 * @var set the total job created based on job history
-	 */
-    protected $totalJobCreated;
-
 
 	public function getPickupLocation()
 	{
@@ -287,15 +282,6 @@ class ZeptoApiHelper
 		*/
 
 		return $this->apiErrMsg;
-	}
-
-	public function getTotalJobCreated()
-	{
-		/**
-		* @todo setter/getter/send request to api
-		*/
-
-		return $this->totalJobCreated;
 	}
 	
 }
