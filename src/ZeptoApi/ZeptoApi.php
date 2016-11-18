@@ -172,7 +172,7 @@ class ZeptoApi extends ZeptoApiHelper implements ZeptoApiInterface
 		}
 		else{
 
-			$this->apiErrMsg = $res->result->message;
+			$this->apiErrMsg = $res->result[0]->message;
 
 			return false;
 		}
@@ -289,16 +289,16 @@ class ZeptoApi extends ZeptoApiHelper implements ZeptoApiInterface
 		];
 
 		$res = $this->execute();
-
-		if ($res->result[0]->status != false) {
+		
+		if ($res->result->status != false) {
 			
-			$this->riderLocation = $res->result[0]->rider;
+			$this->riderLocation = $res->result->rider;
 
 			return $res;
 		}
 		else{
 
-			$this->apiErrMsg = $res->result[0]->message;
+			$this->apiErrMsg = $res->message;
 
 			return false;
 		}
@@ -358,16 +358,16 @@ class ZeptoApi extends ZeptoApiHelper implements ZeptoApiInterface
 
 		$res = $this->execute();
 
-		if ($res->booking[0]->status != false) {
+		if ($res->booking->status != false) {
 			
-			$this->paymentUrl = $res->booking[0]->payment_url;
-			$this->jobID = $res->booking[0]->jobid;
+			$this->paymentUrl = $res->booking->payment_url;
+			$this->jobID = $res->booking->jobid;
 
 			return $res;
 		}
 		else{
 
-			$this->apiErrMsg = $res->booking[0]->message;
+			$this->apiErrMsg = $res->booking->message;
 
 			return false;
 		}
@@ -433,16 +433,7 @@ class ZeptoApi extends ZeptoApiHelper implements ZeptoApiInterface
 
 		$res = $this->execute();
 
-		if ($res->result[0]->status != false) {
-			
-			return $res;
-		}
-		else{
-
-			$this->apiErrMsg = $res->result[0]->message;
-
-			return false;
-		}
+		return $res;
 	}
 
 	public function exception($msg=null){
